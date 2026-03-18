@@ -1,0 +1,586 @@
+/* ============================================================
+   SEÁN O'MEARA — Stylesheet
+   ============================================================ */
+
+:root {
+    --bg-dark:      #090f09;
+    --bg-mid:       #101810;
+    --bg-light:     #141f14;
+    --accent:       #4e7a5c;
+    --accent-light: #72a882;
+    --text:         #f0ebe0;
+    --text-muted:   #8a8070;
+    --font-heading: 'Playfair Display', serif;
+    --font-body:    'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.75;
+    overflow-x: hidden;
+}
+
+/* ================================================================
+   NAVBAR
+================================================================ */
+
+#mainNav {
+    background: transparent;
+    transition: background 0.5s ease, padding 0.4s ease, box-shadow 0.4s ease;
+    padding: 1.4rem 0;
+}
+
+#mainNav.scrolled {
+    background: rgba(9, 15, 9, 0.96);
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 0;
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.nav-logo {
+    height: 38px;
+    width: auto;
+    display: block;
+}
+
+.nav-link {
+    color: rgba(240, 235, 224, 0.8) !important;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.1rem !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--accent-light) !important;
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(240, 235, 224, 0.25);
+    padding: 0.35rem 0.6rem;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28240%2C235%2C224%2C0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ================================================================
+   HERO
+================================================================ */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background-image: url('../DSC00375.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.65) 0%,       /* dark band for navbar */
+        rgba(0, 0, 0, 0.65) 12%,
+        rgba(0, 0, 0, 0.35) 38%,       /* lighter through mid */
+        rgba(0, 0, 0, 0.5) 65%,
+        rgba(9, 15, 9, 0.95) 100%
+    );
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-top: 90px; /* clear the fixed navbar */
+    padding-bottom: 3rem;
+}
+
+.hero-logo {
+    width: min(420px, 80vw);
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.8));
+}
+
+/* ---- Hero tour list ---- */
+.hero-section-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 0.75rem;
+}
+
+.hero-tour-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-tour-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-tour-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-tour-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 40px;
+    flex-shrink: 0;
+}
+
+.hero-tour-date .month {
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.hero-tour-date .day {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.hero-tour-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.hero-tour-info .venue {
+    color: var(--text);
+    font-weight: 500;
+    font-size: 0.88rem;
+}
+
+.hero-tour-info .location {
+    color: rgba(240, 235, 224, 0.55);
+    font-size: 0.75rem;
+}
+
+/* ---- Hero album ---- */
+.hero-album-art {
+    width: min(220px, 55vw);
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
+}
+
+.hero-album-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.scroll-indicator span {
+    display: block;
+    width: 1px;
+    height: 56px;
+    background: linear-gradient(to bottom, rgba(240, 235, 224, 0.55), transparent);
+    margin: 0 auto;
+    animation: scrollLine 2.2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+    0%   { opacity: 0; transform: scaleY(0); transform-origin: top; }
+    30%  { opacity: 1; }
+    100% { opacity: 0; transform: scaleY(1); transform-origin: top; }
+}
+
+/* ================================================================
+   SHARED
+================================================================ */
+
+.section-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.section-divider {
+    width: 48px;
+    height: 2px;
+    background: var(--accent);
+    margin-bottom: 2.5rem;
+}
+
+/* ================================================================
+   ABOUT
+================================================================ */
+
+.section-about {
+    background-color: var(--bg-dark);
+    padding: 9rem 0;
+}
+
+.about-img {
+    width: 100%;
+    height: 580px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: brightness(0.88) contrast(1.06) saturate(0.9);
+}
+
+.about-text {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-bottom: 1.4rem;
+}
+
+.about-text em {
+    color: var(--accent-light);
+    font-style: italic;
+}
+
+/* ================================================================
+   MUSIC
+================================================================ */
+
+.section-music {
+    background-color: var(--bg-mid);
+    padding: 9rem 0;
+}
+
+.album-wrap {
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+/* Real album art — swap in when file is available */
+.album-art {
+    width: 100%;
+    max-width: 280px;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+    margin-bottom: 2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.album-title {
+    font-family: var(--font-heading);
+    font-size: 1.55rem;
+    font-style: italic;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+}
+
+.album-sub {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn-accent {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--text);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0;
+    transition: background 0.3s;
+}
+
+.btn-accent:hover {
+    background: var(--accent-light);
+    color: var(--text);
+}
+
+/* ================================================================
+   TOUR
+================================================================ */
+
+.section-tour {
+    background-color: var(--bg-light);
+    padding: 9rem 0;
+}
+
+.tour-poster {
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tour-intro {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tour-intro strong {
+    color: var(--accent-light);
+    font-weight: 500;
+}
+
+.tour-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.tour-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: padding-left 0.25s;
+}
+
+.tour-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tour-item:hover {
+    padding-left: 0.4rem;
+}
+
+.tour-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 46px;
+    flex-shrink: 0;
+}
+
+.tour-date .month {
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.tour-date .day {
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+    color: var(--text);
+    line-height: 1.15;
+}
+
+.tour-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.tour-info .venue {
+    color: var(--text);
+    font-weight: 500;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tour-info .location {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 0.1rem;
+}
+
+.btn-tickets {
+    display: inline-block;
+    border: 1px solid rgba(78, 122, 92, 0.55);
+    color: var(--accent-light);
+    background: transparent;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.38rem 1rem;
+    border-radius: 0;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.btn-tickets:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--text);
+}
+
+/* ================================================================
+   FOOTER
+================================================================ */
+
+.site-footer {
+    background-color: var(--bg-dark);
+    padding: 5rem 0 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-brand {
+    margin-bottom: 1.8rem;
+}
+
+.footer-logo {
+    width: min(280px, 70vw);
+    height: auto;
+    opacity: 0.85;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.8rem;
+    margin-bottom: 2.5rem;
+}
+
+.social-link {
+    color: var(--text-muted);
+    font-size: 1.35rem;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.social-link:hover {
+    color: var(--accent-light);
+    transform: translateY(-2px);
+}
+
+.footer-copy {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+/* ================================================================
+   FADE-IN ON SCROLL
+================================================================ */
+
+.fade-section {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
+
+@media (max-width: 991.98px) {
+    .section-about,
+    .section-music,
+    .section-tour {
+        padding: 6rem 0;
+    }
+
+    .about-img {
+        height: 420px;
+    }
+
+    .hero {
+        background-attachment: scroll; /* parallax fix for iOS */
+    }
+
+    .tour-poster {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .tour-item {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .btn-tickets {
+        width: 100%;
+        text-align: center;
+        margin-top: 0.25rem;
+    }
+
+    .about-img {
+        height: 320px;
+    }
+}
