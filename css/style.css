@@ -604,6 +604,15 @@ body {
         object-position: 80% bottom;
     }
 
+
+    /* Mobile */
+    @media (max-width: 768px) {
+    .about-img {
+        height: 320px;
+        object-position: 95% bottom;
+    }
+    }
+
     /* Reduce section padding on small screens */
     .section-about,
     .section-music,
