@@ -569,6 +569,11 @@ body {
         font-size: 3rem;
     }
 
+    /* Hide album art in hero on mobile — Music section below has it */
+    .hero-album-col {
+        display: none;
+    }
+
     /* Hero tour list on mobile */
     .hero-tour-item {
         flex-wrap: wrap;
@@ -576,9 +581,9 @@ body {
     }
 
     .hero-tour-item .btn-tickets {
-        width: 100%;
+        flex-basis: calc(100% - 3.5rem);
+        margin-left: 3.5rem;
         text-align: center;
-        margin-left: 3.5rem; /* indent past the date column */
     }
 
     /* Full tour section on mobile */
