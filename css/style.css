@@ -601,7 +601,7 @@ body {
     /* About image — shift right to show Sean */
     .about-img {
         height: 420px;
-        object-position: right center;
+        object-position: right bottom;
     }
 
     /* Reduce section padding on small screens */
