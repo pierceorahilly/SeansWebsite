@@ -569,6 +569,19 @@ body {
         font-size: 3rem;
     }
 
+    /* Hero tour list on mobile */
+    .hero-tour-item {
+        flex-wrap: wrap;
+        gap: 0.4rem 0.75rem;
+    }
+
+    .hero-tour-item .btn-tickets {
+        width: 100%;
+        text-align: center;
+        margin-left: 3.5rem; /* indent past the date column */
+    }
+
+    /* Full tour section on mobile */
     .tour-item {
         flex-wrap: wrap;
         gap: 0.75rem;
@@ -580,7 +593,16 @@ body {
         margin-top: 0.25rem;
     }
 
+    /* About image — crop to show Sean, not the top of the frame */
     .about-img {
-        height: 320px;
+        height: 420px;
+        object-position: center 30%;
+    }
+
+    /* Reduce section padding on small screens */
+    .section-about,
+    .section-music,
+    .section-tour {
+        padding: 4rem 0;
     }
 }

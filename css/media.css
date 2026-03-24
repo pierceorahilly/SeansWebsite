@@ -124,6 +124,17 @@
     display: block;
 }
 
+/* ---- Mobile ---- */
+@media (max-width: 575.98px) {
+    .media-section {
+        padding: 3.5rem 0;
+    }
+
+    .media-header {
+        height: 200px;
+    }
+}
+
 /* ---- Navbar always solid on this page ---- */
 #mainNav.scrolled {
     background: rgba(9, 15, 9, 0.96);
