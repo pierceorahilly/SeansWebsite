@@ -32,6 +32,27 @@ if (menuToggler && navMenu) {
     });
 }
 
+// Active nav link on scroll (index.html only)
+const sections = document.querySelectorAll('section[id]');
+if (sections.length) {
+    const navLinks = document.querySelectorAll('#navbarNav .nav-link');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            if (window.scrollY >= section.offsetTop - 120) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    }, { passive: true });
+}
+
 // Simple fade-in on scroll for sections
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
