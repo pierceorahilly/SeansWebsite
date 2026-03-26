@@ -711,12 +711,16 @@ body.menu-locked {
     color: var(--accent-light);
 }
 
-.merch-img-placeholder {
+.merch-img {
     width: 100%;
     aspect-ratio: 1;
-    background-color: var(--bg-light);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    object-fit: cover;
     border-radius: 2px;
+    transition: opacity 0.2s;
+}
+
+.merch-item:hover .merch-img {
+    opacity: 0.85;
 }
 
 .merch-name {
