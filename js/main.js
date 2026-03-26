@@ -26,15 +26,28 @@ handleScroll(); // run on load in case page is already scrolled
 const menuToggler = document.getElementById('menuToggler');
 const navMenu = document.getElementById('navbarNav');
 
+function openMenu() {
+    navMenu.classList.add('menu-open');
+    document.body.classList.add('menu-locked');
+}
+
+function closeMenu() {
+    navMenu.classList.remove('menu-open');
+    document.body.classList.remove('menu-locked');
+}
+
 if (menuToggler && navMenu) {
+    // Auto-open on mobile load
+    if (window.innerWidth < 768) {
+        openMenu();
+    }
+
     menuToggler.addEventListener('click', () => {
-        navMenu.classList.toggle('menu-open');
+        navMenu.classList.contains('menu-open') ? closeMenu() : openMenu();
     });
 
     navMenu.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('menu-open');
-        });
+        link.addEventListener('click', closeMenu);
     });
 }
 
@@ -69,7 +82,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.section-about, .section-music, .section-tour, .site-footer').forEach(el => {
+document.querySelectorAll('.section-about, .section-music, .section-merch, .section-music-streaming, .section-tour, .site-footer').forEach(el => {
     el.classList.add('fade-section');
     observer.observe(el);
 });
