@@ -50,6 +50,40 @@ body {
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
 }
 
+@media (max-width: 767px) {
+    #mainNav {
+        z-index: 1050;
+    }
+
+    .navbar-toggler {
+        position: relative;
+        z-index: 1060;
+    }
+
+    #navbarNav.show {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.75);
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        z-index: 1050;
+    }
+
+    #navbarNav.show .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    #navbarNav.show .nav-link {
+        font-size: 1.4rem;
+        letter-spacing: 0.2em;
+        padding: 0.75rem 1rem !important;
+    }
+}
+
 .navbar-brand {
     padding: 0;
 }
@@ -98,6 +132,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .hero .hero-tour-list,
+    .hero .hero-album-col,
+    .hero .hero-section-label {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {

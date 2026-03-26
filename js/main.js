@@ -16,6 +16,12 @@ function handleScroll() {
 window.addEventListener('scroll', handleScroll, { passive: true });
 handleScroll(); // run on load in case page is already scrolled
 
+// Open mobile menu on load
+if (window.innerWidth < 768) {
+    const collapseEl = document.getElementById('navbarNav');
+    new bootstrap.Collapse(collapseEl, { toggle: true });
+}
+
 // Close mobile menu when a nav link is clicked
 document.querySelectorAll('#navbarNav .nav-link').forEach(link => {
     link.addEventListener('click', () => {
