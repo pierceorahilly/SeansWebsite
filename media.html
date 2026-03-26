@@ -23,8 +23,13 @@
             <a class="navbar-brand" href="index.html">
                 <img src="loso sean omeara yellow (1).png" alt="Seán O'Meara" class="nav-logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="nav-social-icons">
+                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+            <button class="navbar-toggler" type="button" id="menuToggler" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -209,5 +214,6 @@
             wrap.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?rel=0" allowfullscreen allow="encrypted-media"></iframe>`;
         });
     </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

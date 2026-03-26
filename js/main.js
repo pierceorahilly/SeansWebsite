@@ -16,20 +16,21 @@ function handleScroll() {
 window.addEventListener('scroll', handleScroll, { passive: true });
 handleScroll(); // run on load in case page is already scrolled
 
-// Open mobile menu on load
-if (window.innerWidth < 768) {
-    const collapseEl = document.getElementById('navbarNav');
-    new bootstrap.Collapse(collapseEl, { toggle: true });
-}
+// Mobile fullscreen menu toggle
+const menuToggler = document.getElementById('menuToggler');
+const navMenu = document.getElementById('navbarNav');
 
-// Close mobile menu when a nav link is clicked
-document.querySelectorAll('#navbarNav .nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        const collapseEl = document.getElementById('navbarNav');
-        const bsCollapse = bootstrap.Collapse.getInstance(collapseEl);
-        if (bsCollapse) bsCollapse.hide();
+if (menuToggler && navMenu) {
+    menuToggler.addEventListener('click', () => {
+        navMenu.classList.toggle('menu-open');
     });
-});
+
+    navMenu.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('menu-open');
+        });
+    });
+}
 
 // Simple fade-in on scroll for sections
 const observer = new IntersectionObserver((entries) => {

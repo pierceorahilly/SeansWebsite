@@ -60,27 +60,39 @@ body {
         z-index: 1060;
     }
 
-    #navbarNav.show {
+    #navbarNav {
+        display: none !important;
         position: fixed;
         inset: 0;
         background: rgba(0, 0, 0, 0.75);
-        display: flex !important;
         align-items: center;
         justify-content: center;
         z-index: 1050;
     }
 
-    #navbarNav.show .navbar-nav {
+    #navbarNav.menu-open {
+        display: flex !important;
+    }
+
+    #navbarNav .navbar-nav {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
         text-align: center;
     }
 
-    #navbarNav.show .nav-link {
+    #navbarNav .nav-link {
         font-size: 1.4rem;
         letter-spacing: 0.2em;
         padding: 0.75rem 1rem !important;
+    }
+
+    .hero {
+        align-items: flex-start;
+    }
+
+    .hero-inner {
+        padding-top: 6rem;
     }
 }
 
@@ -92,6 +104,31 @@ body {
     height: 38px;
     width: auto;
     display: block;
+}
+
+.nav-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin-left: 1rem;
+}
+
+.nav-social-icons a {
+    color: rgba(240, 235, 224, 0.7);
+    font-size: 0.95rem;
+    padding: 0.3rem 0.45rem;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+.nav-social-icons a:hover {
+    color: var(--accent-light);
+}
+
+@media (max-width: 767px) {
+    .nav-social-icons {
+        display: none;
+    }
 }
 
 .nav-link {
@@ -572,6 +609,43 @@ body {
     font-size: 0.78rem;
     letter-spacing: 0.05em;
     margin: 0;
+}
+
+/* ================================================================
+   MOBILE SOCIAL BAR
+================================================================ */
+
+.mobile-social-bar {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .mobile-social-bar {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1040;
+        background: rgba(9, 15, 9, 0.92);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        justify-content: space-around;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    }
+
+    .mobile-social-bar a {
+        color: rgba(240, 235, 224, 0.7);
+        font-size: 1.4rem;
+        transition: color 0.2s;
+        padding: 0.25rem 0.75rem;
+    }
+
+    .mobile-social-bar a:hover {
+        color: var(--accent-light);
+    }
 }
 
 /* ================================================================
