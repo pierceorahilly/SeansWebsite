@@ -11,6 +11,12 @@ function handleScroll() {
     } else {
         nav.classList.remove('scrolled');
     }
+
+    if (window.scrollY < window.innerHeight * 0.8) {
+        document.body.classList.add('at-hero');
+    } else {
+        document.body.classList.remove('at-hero');
+    }
 }
 
 window.addEventListener('scroll', handleScroll, { passive: true });
