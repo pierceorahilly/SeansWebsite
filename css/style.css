@@ -94,6 +94,10 @@ body {
     .hero-inner {
         padding-top: 6rem;
     }
+
+    .hero-logo {
+        display: none;
+    }
 }
 
 .navbar-brand {
