@@ -60,6 +60,12 @@ body {
         z-index: 1060;
     }
 
+    /* Hide hamburger on hero, show it everywhere else */
+    body.at-hero .navbar-toggler {
+        display: none;
+    }
+
+    /* Nav links: hidden by default on mobile */
     #navbarNav {
         display: none !important;
         position: fixed;
@@ -68,14 +74,16 @@ body {
         align-items: center;
         justify-content: center;
         z-index: 1050;
-        transition: background 0.3s ease;
     }
 
+    /* On hero: always show links, no overlay */
     body.at-hero #navbarNav {
+        display: flex !important;
         background: transparent;
     }
 
-    #navbarNav.menu-open {
+    /* Off hero: show links only when menu is open */
+    body:not(.at-hero) #navbarNav.menu-open {
         display: flex !important;
     }
 
@@ -679,12 +687,57 @@ body.menu-locked {
     text-align: center;
 }
 
-.merch-soon {
+.merch-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.merch-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.merch-item:hover .merch-img-placeholder {
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.merch-item:hover .merch-name {
+    color: var(--accent-light);
+}
+
+.merch-img-placeholder {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: var(--bg-light);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+}
+
+.merch-name {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1rem;
+    color: var(--text);
+    margin: 0;
+}
+
+.merch-price {
+    font-size: 0.8rem;
     color: var(--text-muted);
-    font-style: italic;
-    margin-top: 2rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .merch-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* ================================================================

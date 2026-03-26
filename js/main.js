@@ -2,6 +2,22 @@
    SEÁN O'MEARA — Main JS
    ============================================================ */
 
+// Mobile menu helpers (defined early so handleScroll can use them)
+const menuToggler = document.getElementById('menuToggler');
+const navMenu = document.getElementById('navbarNav');
+
+function openMenu() {
+    if (!navMenu) return;
+    navMenu.classList.add('menu-open');
+    document.body.classList.add('menu-locked');
+}
+
+function closeMenu() {
+    if (!navMenu) return;
+    navMenu.classList.remove('menu-open');
+    document.body.classList.remove('menu-locked');
+}
+
 // Navbar: go solid on scroll
 const nav = document.getElementById('mainNav');
 
@@ -14,6 +30,7 @@ function handleScroll() {
 
     if (window.scrollY < window.innerHeight * 0.8) {
         document.body.classList.add('at-hero');
+        closeMenu();
     } else {
         document.body.classList.remove('at-hero');
     }
@@ -23,25 +40,7 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 handleScroll(); // run on load in case page is already scrolled
 
 // Mobile fullscreen menu toggle
-const menuToggler = document.getElementById('menuToggler');
-const navMenu = document.getElementById('navbarNav');
-
-function openMenu() {
-    navMenu.classList.add('menu-open');
-    document.body.classList.add('menu-locked');
-}
-
-function closeMenu() {
-    navMenu.classList.remove('menu-open');
-    document.body.classList.remove('menu-locked');
-}
-
 if (menuToggler && navMenu) {
-    // Auto-open on mobile load
-    if (window.innerWidth < 768) {
-        openMenu();
-    }
-
     menuToggler.addEventListener('click', () => {
         navMenu.classList.contains('menu-open') ? closeMenu() : openMenu();
     });
