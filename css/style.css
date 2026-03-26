@@ -96,7 +96,7 @@ body {
     }
 
     .hero-logo {
-        display: none;
+        display: none !important;
     }
 }
 
