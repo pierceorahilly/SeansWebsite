@@ -637,6 +637,23 @@ body {
     margin: 0;
 }
 
+.footer-powered {
+    margin-top: 0.4rem;
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.04em;
+}
+
+.footer-powered a {
+    color: rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-powered a:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
 /* ================================================================
    MOBILE SOCIAL BAR
 ================================================================ */

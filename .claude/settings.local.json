@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:seanomeara.bandcamp.com)"
+      "WebFetch(domain:seanomeara.bandcamp.com)",
+      "WebFetch(domain:www.theolllam.com)",
+      "WebFetch(domain:www.bandsintown.com)"
     ]
   }
 }
