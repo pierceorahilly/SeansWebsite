@@ -76,20 +76,20 @@ body {
         display: none !important;
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.45);
+        background: rgba(0, 0, 0, 0.75);
         align-items: center;
         justify-content: center;
         z-index: 1050;
     }
 
-    /* On hero: always show links, no overlay */
+    /* On hero: always show links, transparent overlay */
     body.at-hero #navbarNav {
         display: flex !important;
         background: transparent;
     }
 
-    /* Off hero: show links only when menu is open */
-    body:not(.at-hero) #navbarNav.menu-open {
+    /* Menu open state — works everywhere */
+    #navbarNav.menu-open {
         display: flex !important;
     }
 

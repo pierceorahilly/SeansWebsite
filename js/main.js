@@ -20,6 +20,8 @@ function closeMenu() {
 
 // Navbar: go solid on scroll
 const nav = document.getElementById('mainNav');
+const heroSection = document.querySelector('.hero');
+let wasAtHero = false;
 
 function handleScroll() {
     if (window.scrollY > 60) {
@@ -28,11 +30,19 @@ function handleScroll() {
         nav.classList.remove('scrolled');
     }
 
-    if (window.scrollY < 50) {
+    const heroThreshold = heroSection ? heroSection.offsetHeight * 0.4 : 0;
+    const atHero = heroSection && window.scrollY < heroThreshold;
+
+    if (atHero) {
         document.body.classList.add('at-hero');
+        wasAtHero = true;
     } else {
         document.body.classList.remove('at-hero');
-        closeMenu();
+        // only close menu when leaving the hero, not on every scroll
+        if (wasAtHero) {
+            closeMenu();
+            wasAtHero = false;
+        }
     }
 }
 
