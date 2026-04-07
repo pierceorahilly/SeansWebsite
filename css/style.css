@@ -51,9 +51,17 @@ body {
 
 #mainNav.scrolled {
     background: rgba(9, 15, 9, 0.96);
-    backdrop-filter: blur(10px);
     padding: 0.75rem 0;
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+}
+
+#mainNav.scrolled::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    pointer-events: none;
 }
 
 @media (max-width: 767px) {

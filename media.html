@@ -50,7 +50,6 @@
     <header class="media-header">
         <div class="media-header-overlay"></div>
         <div class="container text-center media-header-content">
-            <p class="section-label">Seán O'Meara</p>
             <h1 class="section-title">Media</h1>
             <div class="section-divider mx-auto"></div>
         </div>
@@ -63,9 +62,11 @@
             <h2 class="media-section-title">Live Performances</h2>
             <div class="section-divider"></div>
 
-            <div class="row g-4">
+            <!-- Seán O'Meara -->
+            <p class="section-label mb-3">Seán O'Meara</p>
+            <div class="row g-4 mb-5">
 
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="video-wrap" data-video-id="lLq5UamjmVM">
                         <img src="https://img.youtube.com/vi/lLq5UamjmVM/maxresdefault.jpg" class="video-thumb" alt="Your Love Gets Me High — Live at Vicar Street">
                         <div class="play-btn"><i class="bi bi-play-fill"></i></div>
@@ -73,7 +74,15 @@
                     <p class="video-title">Your Love Gets Me High — Live at Vicar Street</p>
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-4">
+                    <div class="video-wrap" data-video-id="R9jN0NSywvM">
+                        <img src="https://img.youtube.com/vi/R9jN0NSywvM/hqdefault.jpg" class="video-thumb" alt="Gold — Live">
+                        <div class="play-btn"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                    <p class="video-title">Gold — Live</p>
+                </div>
+
+                <div class="col-lg-4">
                     <div class="video-wrap" data-video-id="wiyLu7PMPME">
                         <img src="https://img.youtube.com/vi/wiyLu7PMPME/maxresdefault.jpg" class="video-thumb" alt="Free — Live">
                         <div class="play-btn"><i class="bi bi-play-fill"></i></div>
@@ -81,12 +90,34 @@
                     <p class="video-title">Free — Live</p>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="video-wrap" data-video-id="R9jN0NSywvM">
-                        <img src="https://img.youtube.com/vi/R9jN0NSywvM/maxresdefault.jpg" class="video-thumb" alt="Gold — Live">
+            </div>
+
+            <!-- Global Sounds Concerts -->
+            <p class="section-label mb-3">Global Sounds Concerts</p>
+            <div class="row g-4">
+
+                <div class="col-lg-4">
+                    <div class="video-wrap" data-video-id="Eczf_TReoBo">
+                        <img src="https://img.youtube.com/vi/Eczf_TReoBo/hqdefault.jpg" class="video-thumb" alt="Seán O'Meara — Live at The Cobblestone, Dublin">
                         <div class="play-btn"><i class="bi bi-play-fill"></i></div>
                     </div>
-                    <p class="video-title">Gold — Live</p>
+                    <p class="video-title">Live at The Cobblestone, Dublin</p>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="video-wrap" data-video-id="uuFWZ2Esd2E">
+                        <img src="https://img.youtube.com/vi/uuFWZ2Esd2E/hqdefault.jpg" class="video-thumb" alt="Seán O'Meara — The City of Chicago Live at the Jeanie Johnston">
+                        <div class="play-btn"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                    <p class="video-title">"The City of Chicago" — Live at the Jeanie Johnston</p>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="video-wrap" data-video-id="BjdeXA6XLTc">
+                        <img src="https://img.youtube.com/vi/BjdeXA6XLTc/hqdefault.jpg" class="video-thumb" alt="Seán O'Meara — Free Live at Daphni, Bolands Mills, Dublin">
+                        <div class="play-btn"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                    <p class="video-title">"Free" — Live at Daphni, Bolands Mills, Dublin</p>
                 </div>
 
             </div>
@@ -192,11 +223,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-        // Click-to-load thumbnails + one-at-a-time playback
+        // Click-to-load thumbnails + one-at-a-time YouTube playback
         function resetVideo(wrap) {
             const id = wrap.dataset.videoId;
             wrap.innerHTML = `
-                <img src="https://img.youtube.com/vi/${id}/maxresdefault.jpg" class="video-thumb" alt="">
+                <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" class="video-thumb" alt="">
                 <div class="play-btn"><i class="bi bi-play-fill"></i></div>`;
         }
 
