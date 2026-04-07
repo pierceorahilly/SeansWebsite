@@ -406,11 +406,8 @@ body {
 
 .about-img {
     width: 100%;
-    height: 580px;
-    object-fit: cover;
-    object-position: center top;
+    height: auto;
     display: block;
-    filter: brightness(0.88) contrast(1.06) saturate(0.9);
 }
 
 .about-text {
@@ -839,9 +836,6 @@ body.menu-locked {
         padding: 6rem 0;
     }
 
-    .about-img {
-        height: 420px;
-    }
 
     .hero {
         background-attachment: scroll; /* parallax fix for iOS */
@@ -886,20 +880,6 @@ body.menu-locked {
         margin-top: 0.25rem;
     }
 
-    /* About image — shift right to show Sean */
-    .about-img {
-        height: 420px;
-        object-position: 80% bottom;
-    }
-
-
-    /* Mobile */
-    @media (max-width: 768px) {
-    .about-img {
-        height: 320px;
-        object-position: 100% bottom;
-    }
-    }
 
     /* Reduce section padding on small screens */
     .section-about,
